@@ -1,5 +1,6 @@
 from django.urls import path
+from .views import acortadorUrl
 
-urlpattern = [
-
+urlpatterns = [
+    path('', acortadorUrl.as_view(), name='acortadorUrl' )
 ]

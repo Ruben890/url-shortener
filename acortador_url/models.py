@@ -1,13 +1,13 @@
 from django.db import models
 
 
-class aocrtador_url(models.Model):
+class acortador_url(models.Model):
     url = models.URLField()
     acor_url = models.CharField(max_length=15, unique=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.url
+        return self.acor_url
 
     class Meta:
         verbose_name='acordor_url'
