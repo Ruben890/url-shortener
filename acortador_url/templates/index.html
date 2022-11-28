@@ -1,31 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>acortadro Url</title>
-</head>
-<body>
-<header>
+  </head>
+  <body>
+    <header>
+      <nav></nav>
+    </header>
 
-    <nav>
+    <main class="container">
+      <section class="ingresarUrl">
+        <li>
+          <h1>generar url</h1> <button type="button">g</button>
+        </li>
+        <Li>
+          <p>genrear url de manera automatica</p>
+          <p>genrar url de forma manual</p>
+        </Li>
+        <form method="post">
+          <div>
+            {% csrf_token %}
+            {{ form.as_p }}
+          </div>
+          <button type="submit">generan url</button>
+        </form>
+      </section>
 
-    </nav>
-</header>
-
-<main class="container">
-
-    <section class="ingresarUrl">
-
-
-    </section>
-
-    <section class="result">
-
-    </section>
-</main>
-
-</body>
+      <section class="result">
+        <div>
+          {% for i in url %}
+            <a href="{{ i.acor_url }}">{{ i.acor_url }}</a>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
