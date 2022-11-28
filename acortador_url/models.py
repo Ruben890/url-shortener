@@ -3,7 +3,7 @@ from django.db import models
 
 class acortador_url(models.Model):
     url = models.URLField()
-    acor_url = models.CharField(max_length=15, unique=True, blank=True)
+    acor_url = models.CharField(max_length=15, unique=True, blank=False,null=False)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
