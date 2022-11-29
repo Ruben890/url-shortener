@@ -52,12 +52,29 @@ form > div label {
 .generic_url {
   padding: 18px;
 }
-.qr {
-  justify-content: center;
+.contens_qr {
   display: flex;
+  position: fixed;
+  top:0%;
+  z-index: 5;
+  justify-content: center;
   border-radius: 8px;
   box-shadow: 15px 12px 15px #3c40483f;
   padding: 12px;
+  transition: all 0.8s;
+}
+
+.active {
+  transform: translateY(-600px);
+}
+.contens_qr i {
+  margin: 1rem;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.contens_qr i:hover {
+  color: #c0392b;
 }
 .result {
   height: 20rem;
@@ -110,8 +127,10 @@ form > div label {
   text-decoration: none;
 }
 
-
-
+.btn_qr {
+  background: none;
+  border: none;
+}
 .btn_qr:hover img {
   transform: scale(120%);
 }
@@ -123,6 +142,11 @@ form > div label {
   color: #fafafa;
   background-color: #b2b2b2;
 }
-.result div li:hover a {
+.result > div li:hover .url {
   color: #fafafa;
+}
+
+.eliminar:hover i {
+  transform: scale(120%);
+  color: #c0392b;
 }

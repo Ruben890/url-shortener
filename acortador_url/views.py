@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from .forms import genericUrl
 from .models import acortador_url
-import qrcode
+
 
 
 class GenericUrlView(View):
@@ -18,16 +18,14 @@ class GenericUrlView(View):
             new_url.save()
         return redirect('acortadorUrl')
 
-
+#* redirigir url
 def url(request, token):
     url = acortador_url.objects.filter(acor_url=token)[0]
     return redirect(url.url)
 
+#* eliminar url
+def eliminar(request,id):
+    url = acortador_url.objects.get(id=id)
+    url.delete()
+    return redirect('acortadorUrl')
 
-# class Qr(View):
-#     def post(self, request, url, *args, **kwargs):
-#         qr = qrcode.QRCode(version=1, box_size=10, border=5)
-#         qr.add_data(url)
-#         qr.make(fit=True)
-#         img = qr.make_image(fill='balck', back_color='white')
-#         return render(request, 'QR.html' )

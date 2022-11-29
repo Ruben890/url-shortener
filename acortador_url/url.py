@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import  GenericUrlView, url
+from .views import  GenericUrlView, url, eliminar
 
 urlpatterns = [
     path('',  GenericUrlView.as_view(), name='acortadorUrl' ),
-    path('url/<str:token>', url, name='url'),
-    # path('Qr/<str:url>', Qr.as_view(), name='Qr'),
+    path('<str:token>', url, name='url'),
+    path('eliminar/<int:id>',eliminar, name='eliminar' )
 ]
