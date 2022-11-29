@@ -1,4 +1,4 @@
-### acortador de url
+### url shortener
 <hr>
 <p>
 url shortener created in django which allows you to shorten urls and generate qr from them.
