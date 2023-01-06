@@ -4,7 +4,6 @@ from .forms import genericUrl
 from .models import acortador_url
 
 
-
 class GenericUrlView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html', {'form': genericUrl,
@@ -18,14 +17,17 @@ class GenericUrlView(View):
             new_url.save()
         return redirect('acortadorUrl')
 
-#* redirigir url
+# * redirigir url
+
+
 def url(request, token):
-    url = acortador_url.objects.filter(acor_url=token)[0]
+    url = acortador_url.objects.filter(acor_url=token).first()
     return redirect(url.url)
 
-#* eliminar url
-def eliminar(request,id):
+# * eliminar url
+
+
+def eliminar(request, id):
     url = acortador_url.objects.get(id=id)
     url.delete()
     return redirect('acortadorUrl')
-
