@@ -55,7 +55,7 @@ form > div label {
 .contens_qr {
   display: flex;
   position: fixed;
-  top:0%;
+  top: 0%;
   z-index: 5;
   justify-content: center;
   border-radius: 8px;
@@ -109,10 +109,9 @@ form > div label {
   display: block;
 }
 
-.result div li {
+#url {
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   list-style: none;
   margin: 1rem;
   border: none;
@@ -120,6 +119,7 @@ form > div label {
   background-color: #eaeaea;
   padding: 5px;
 }
+
 .result a {
   margin: 0.5rem;
   font-size: 18px;
@@ -132,21 +132,26 @@ form > div label {
   border: none;
 }
 .btn_qr:hover img {
+  cursor: pointer;
   transform: scale(120%);
 }
 
 .btn_qr img {
   width: 1.5rem;
 }
-.result div li:hover {
-  color: #fafafa;
-  background-color: #b2b2b2;
+
+.result > div  .btn_url:hover p {
+  color: #005691;
+  cursor: pointer;
 }
-.result > div li:hover .url {
-  color: #fafafa;
+
+.result > div #url:hover {
+  transition: all 0.5s;
+  box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.301);
 }
 
 .eliminar:hover i {
+  cursor: pointer;
   transform: scale(120%);
   color: #c0392b;
 }
