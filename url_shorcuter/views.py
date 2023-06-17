@@ -26,9 +26,6 @@ class GenericUrlView(LoginRequiredMixin, View):
             return redirect('url_shorcuter')
         
 ###* redireccionar a la url 
-from django.shortcuts import redirect, HttpResponse
-from .models import Acortador_url
-
 def url(request, token):
     url_obj = Acortador_url.objects.filter(acor_url=token).first()
 
