@@ -1,0 +1,16 @@
+# Ignora archivos y carpetas específicas generados por Django
+*.pyc
+__pycache__
+*.sqlite3
+
+# Ignora archivos y carpetas generados por el entorno de desarrollo
+venv/
+
+# Ignora archivos y carpetas generados por herramientas de prueba
+.coverage
+htmlcov/
+
+# Ignora otros archivos y carpetas no necesarios para la imagen del contenedor
+node_modules/
+staticfiles/
+media/
