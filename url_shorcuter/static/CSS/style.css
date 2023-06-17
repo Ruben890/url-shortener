@@ -1,0 +1,158 @@
+header {
+  background-color: #00abb3;
+}
+header > nav ul {
+  list-style: none;
+  display: flex;
+  padding: 18px;
+}
+
+
+header > nav li a {
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  font-size: 18px;
+  color: #fff;
+}
+header > nav li a:hover {
+  color: #3c4048;
+}
+
+main {
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+main section {
+  margin: 2rem;
+  width: 30rem;
+}
+
+.ingresarUrl > nav {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #eaeaea;
+  margin-bottom: 2rem;
+}
+.ingresarUrl {
+  border-radius: 8px;
+  box-shadow: 15px 12px 15px #3c40483f;
+}
+
+.ingresarUrl > nav h1 {
+  text-align: center;
+  color: #3c4048;
+  font-size: 25px;
+}
+form > div label {
+  display: none;
+}
+
+.generic_url {
+  padding: 18px;
+}
+.contens_qr {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  z-index: 5;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 15px 12px 15px #3c40483f;
+  padding: 12px;
+  transition: all 0.8s;
+}
+
+.active {
+  transform: translateY(-600px);
+}
+.contens_qr i {
+  margin: 1rem;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.contens_qr i:hover {
+  color: #c0392b;
+}
+.result {
+  height: 20rem;
+  overflow: auto;
+  border-radius: 8px;
+  box-shadow: 15px 12px 15px #3c40483f;
+}
+
+.result::-webkit-scrollbar {
+  width: 8px;
+}
+.result::-webkit-scrollbar-thumb {
+  border: none;
+  border-radius: 15px;
+  background-color: #00abb3;
+}
+
+.result > nav {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #005691;
+  margin-bottom: 0.5rem;
+}
+.result > nav h1 {
+  text-align: center;
+  color: #fafafa;
+  font-size: 25px;
+}
+
+.result div {
+  display: block;
+}
+
+#url {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #eaeaea;
+  padding: 5px;
+}
+
+.result a {
+  margin: 0.5rem;
+  font-size: 18px;
+  color: #3c4048;
+  text-decoration: none;
+}
+
+.btn_qr {
+  background: none;
+  border: none;
+}
+.btn_qr:hover img {
+  cursor: pointer;
+  transform: scale(120%);
+}
+
+.btn_qr img {
+  width: 1.5rem;
+}
+
+.result > div  .btn_url:hover p {
+  color: #005691;
+  cursor: pointer;
+}
+
+.result > div #url:hover {
+  transition: all 0.5s;
+  box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.301);
+}
+
+.eliminar:hover i {
+  cursor: pointer;
+  transform: scale(120%);
+  color: #c0392b;
+}

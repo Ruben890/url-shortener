@@ -1,0 +1,14 @@
+main > section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  section > form {
+      background-color: #F7F9F9;
+  }
+  
+  
+  .errorlist > li {
+    list-style: none;
+    color: #e74c3c;
+  }

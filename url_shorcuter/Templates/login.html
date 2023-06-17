@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/470155/unlink-alt-4.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+  </head>
+  <body>
+    <main class="container-fluid">
+      <section>
+       
+        <form method="post" class="shadow p-5 w-50" style="border-radius: 15px;">
+          <h2 >Login</h2>
+          <hr class="mb-5">
+          {% csrf_token %}
+            <div>
+              {{ form.as_p }}
+              <div class="d-flex">
+                <label class="me-2"> Mostrar contraseña</label>
+                <input type="checkbox" class="passowrd" onclick="Ver()" />
+               </div>
+              <a href="{% url 'register' %}">I do not have an account</a>
+            </div>
+            <div class="btn">
+              <button type="submit" class=" btn btn-dark">Login</button>
+            </div>
+        </form>
+      </section>
+    </main>
+  </body>
+
+  <script>
+    const passowrd = document.getElementById("id_password");
+    const Ver = () => {
+      if (passowrd.type == "password") {
+        passowrd.type = "text";
+      } else {
+        passowrd.type = "passowrd";
+      }
+    };
+  </script>
+</html>
