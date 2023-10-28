@@ -1,30 +1,21 @@
-# Usa una imagen base de Python
-FROM python:3.11.4-alpine3.18
+ARG PYTHON_VERSION=3.11-slim-bullseye
 
-# Establece el directorio de trabajo
-WORKDIR /app
+FROM python:${PYTHON_VERSION}
 
-# Copia los archivos de requerimientos (requirements.txt) al contenedor
-COPY requirements.txt .
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Instala las dependencias del proyecto
-RUN pip install -r requirements.txt
+RUN mkdir -p /code
 
-# Copia todo el contenido del proyecto al contenedor
-COPY . .
+WORKDIR /code
 
-# Configura las variables de entorno para producción
-ENV DJANGO_SETTINGS_MODULE=config.settings
+COPY requirements.txt /tmp/requirements.txt
+RUN set -ex && \
+    pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt && \
+    rm -rf /root/.cache/
+COPY . /code
 
-
-# Realiza las migraciones de la base de datos
-RUN python manage.py migrate
-
-# Recopila los archivos estáticos
-RUN python manage.py collectstatic --noinput
-
-# Expone el puerto en el que se ejecutará el servidor web de Django
 EXPOSE 8000
 
-# Comando para ejecutar el servidor web de Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "config.wsgi"]
