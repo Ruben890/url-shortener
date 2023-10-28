@@ -19,9 +19,9 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['url-fly',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -113,10 +113,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATIC_URL = 'static/'
+STATIC_ROOT = '/app/static/'
+STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'acortador_url/static')
 ]
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_URL = 'login'  # Ruta para el inicio de sesión
