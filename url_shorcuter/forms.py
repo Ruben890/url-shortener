@@ -1,20 +1,24 @@
 from django import forms
-from .models import  Acortador_url
+from .models import Acortador_url
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
-class genericUrl(forms.ModelForm):
 
-    url = forms.URLField(label='url', required=True,
-                         widget=forms.TextInput(attrs={'placeholder': 'url', 'class':'form-control'}))
-    acor_url = forms.CharField(label='nombre de la url', required=True, max_length=18,
-                               widget=(forms.TextInput(attrs={'placeholder': 'Nombre de la url', 'class':'form-control'})))
+class GenericUrlForm(forms.ModelForm):
+    acor_url = forms.CharField(label='Nombre de la URL', required=True, max_length=18,
+                               widget=forms.TextInput(attrs={'placeholder': 'Nombre de la URL', 'class': 'form-control'}))
+    
+    url = forms.URLField(label='URL', required=True,
+                         widget=forms.TextInput(attrs={'placeholder': 'URL', 'class': 'form-control'}))
+
     class Meta:
         model = Acortador_url
-        fields = ['url',  'acor_url']
-        
+        fields = ['acor_url','url' ]
 
 
+class Meta:
+    model = Acortador_url
+    fields = ['url',  'acor_url']
 
 
 class UserRegister(UserCreationForm):
