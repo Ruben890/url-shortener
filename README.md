@@ -4,6 +4,7 @@
 -->
 <hr/>
 
-## <a hreft="https://darlinruben13.pythonanywhere.com/">Acortaodor de url</a>
+## <a href="https://darlinruben13.pythonanywhere.com/">Acortador de URL</a>
+
 
 <img src="/gif.gif" alt="gif">
