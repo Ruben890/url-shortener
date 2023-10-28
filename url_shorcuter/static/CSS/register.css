@@ -1,14 +1,23 @@
 main > section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+section > form {
+  background-color: #f7f9f9;
+}
+.form-group {
+  width: 50%;
+}
+
+.errorlist > li {
+  list-style: none;
+  color: #e74c3c;
+}
+
+@media only screen and (max-width: 480px), only screen and (max-width: 768px) {
+  .form-group {
+    margin-top: 2rem;
+    width: 100%;
   }
-  
-  section > form {
-      background-color: #F7F9F9;
-  }
-  
-  
-  .errorlist > li {
-    list-style: none;
-    color: #e74c3c;
-  }
+}

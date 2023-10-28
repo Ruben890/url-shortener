@@ -7,7 +7,6 @@ header > nav ul {
   padding: 18px;
 }
 
-
 header > nav li a {
   text-decoration: none;
   cursor: pointer;
@@ -132,16 +131,18 @@ form > div label {
   background: none;
   border: none;
 }
-.btn_qr:hover img {
+.btn_qr:hover i {
   cursor: pointer;
   transform: scale(120%);
+  color: #005691;
+  transition: all 0.5;
 }
 
-.btn_qr img {
+.btn_qr i {
   width: 1.5rem;
 }
 
-.result > div  .btn_url:hover p {
+.result > div .btn_url:hover p {
   color: #005691;
   cursor: pointer;
 }

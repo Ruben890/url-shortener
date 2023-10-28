@@ -1,3 +1,4 @@
+@@ -0,0 +1,290 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,pycharm
 
@@ -136,7 +137,6 @@ celerybeat.pid
 
 # Environments
 .env
-.env.local
 .venv
 env/
 venv/
